@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>粉色小球跳跃挑战</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-wrapper">
+      <header class="hud">
+        <h1>粉色小球跳跃挑战</h1>
+        <div class="instructions">
+          <p>按下<span class="key">空格键</span>让粉色小球跳跃，连续按压可以连跳！</p>
+          <p>躲避右侧出现的方块障碍物，坚持更长时间，挑战你的最高分！</p>
+        </div>
+        <div class="scoreboard">
+          <span>当前得分：<strong id="score">0</strong></span>
+          <span>最高得分：<strong id="best">0</strong></span>
+        </div>
+      </header>
+      <section class="canvas-container">
+        <canvas id="game" width="640" height="360" role="img" aria-label="粉色小球跳跃游戏画面"></canvas>
+        <div id="overlay" class="overlay hidden" role="alert" aria-live="assertive"></div>
+      </section>
+    </main>
+    <footer class="credits">
+      <p>提示：随时按空格键重新开始。</p>
+    </footer>
+    <script src="game.js"></script>
+  </body>
+</html>

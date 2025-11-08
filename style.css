@@ -1,0 +1,126 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --bg: #0b1026;
+  --panel: rgba(12, 18, 40, 0.85);
+  --accent: #ff5fbf;
+  --text: #f5f7ff;
+  --muted: #9aa0c2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #181f3a 0%, #050715 65%, #02020a 100%);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.game-wrapper {
+  width: min(960px, 100%);
+  background: var(--panel);
+  border-radius: 1.25rem;
+  padding: 2rem clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+.hud {
+  text-align: center;
+}
+
+.hud h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+}
+
+.instructions {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+}
+
+.instructions .key {
+  display: inline-block;
+  margin: 0 0.25rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.canvas-container {
+  position: relative;
+  margin-top: 1.75rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: linear-gradient(180deg, #1a1e35 0%, #080a18 70%, #02030b 100%);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: rgba(2, 3, 11, 0.76);
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay strong {
+  color: var(--accent);
+  font-size: 1.6rem;
+}
+
+.credits {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .game-wrapper {
+    padding: 1.5rem 1rem;
+  }
+}
